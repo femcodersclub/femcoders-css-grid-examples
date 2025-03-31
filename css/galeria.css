@@ -45,6 +45,9 @@
     color: #ecf0f1;
     white-space: pre;
   }
+  .mini-code code{
+    color:var(--dark-color);
+  }
   
   /* Tarjetas de características */
   .features-grid {
@@ -180,6 +183,7 @@
     margin: 0;
     font-size: 0.9rem;
     opacity: 0.8;
+    color:#ecf0f1;
   }
   
   /* Estilos para el layout tipo Masonry */
