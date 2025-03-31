@@ -1,0 +1,334 @@
+/* Estilos específicos para la página de Grid Implícito vs Explícito */
+
+/* Contenedor principal */
+.content-container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Secciones explicativas */
+  .explanation, 
+  .comparison-demo, 
+  .grid-auto-properties,
+  .interactive-playground,
+  .use-cases,
+  .challenge-section {
+    margin-bottom: 2.5rem;
+    background-color: white;
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: var(--box-shadow);
+  }
+  
+  .explanation h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+  }
+  
+  .explanation p {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+  
+  /* Tarjetas de definición */
+  .definition-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  
+  .definition-card {
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr;
+    gap: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .definition-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .definition-card.explicit {
+    background-color: #e3f2fd; /* Light blue */
+    border-left: 5px solid var(--accent-color);
+  }
+  
+  .definition-card.implicit {
+    background-color: #f3e5f5; /* Light purple */
+    border-left: 5px solid var(--primary-color);
+  }
+  
+  .definition-card h3 {
+    margin: 0;
+    color: var(--dark-color);
+  }
+  
+  .icon-container {
+    text-align: center;
+    font-size: 2.5rem;
+  }
+  
+  .explicit .icon-container {
+    color: var(--accent-color);
+  }
+  
+  .implicit .icon-container {
+    color: var(--primary-color);
+  }
+  
+  /* Demostración de Grid Explícito vs Implícito */
+  .demo-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 1.5rem;
+  }
+  
+  .demo-grid {
+    background-color: var(--light-color);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+  }
+  
+  .demo-grid h4 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: var(--dark-color);
+    text-align: center;
+  }
+  
+  .grid-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 100px);
+    gap: 10px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .implicit-controlled .grid-wrapper {
+    grid-auto-rows: 150px;
+  }
+  
+  .grid-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 4px;
+    color: white;
+  }
+  
+  .grid-item.explicit {
+    background-color: var(--accent-color);
+  }
+  
+  .grid-item.implicit {
+    background-color: var(--primary-color);
+  }
+  
+  .code-snippet {
+    background-color: var(--dark-color);
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    overflow-x: auto;
+  }
+  
+  .code-snippet code {
+    color: #f8f9fa;
+    font-family: 'Courier New', Courier, monospace;
+    white-space: pre;
+  }
+  
+  /* Propiedades de Grid Auto */
+  .properties-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  
+  .property-card {
+    background-color: var(--light-color);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    border-top: 5px solid var(--primary-color);
+  }
+  
+  .property-card h4 {
+    margin-top: 0;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+  }
+  code{
+    color: #ea4f33;
+  }
+  .code-example {
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+    padding: 1rem;
+    margin-top: 1rem;
+    overflow-x: auto;
+  }
+  
+  .code-example code {
+    font-family: 'Courier New', Courier, monospace;
+  }
+  
+  /* Sección de playground interactivo */
+  .controls {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    background-color: var(--light-color);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+  }
+  
+  .control-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .toggle-group {
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .control-group label {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+  
+  .control-group select,
+  .control-group input[type="range"] {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .playground-grid {
+    min-height: 500px;
+    background-color: var(--light-color);
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    position: relative;
+    margin-bottom: 1.5rem;
+    
+    /* Grid base */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 100px);
+    gap: 10px;
+  }
+  
+  .playground-grid.show-lines {
+    background-size: 
+      calc(100% / 3) 100%,  /* Columnas */
+      100% 100px;           /* Filas */
+    background-image: 
+      linear-gradient(to right, rgba(0,0,0,0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0,0,0,0.05) 1px, transparent 1px);
+  }
+  
+  .playground-grid .grid-item {
+    animation: fadeIn 0.3s ease-out;
+    transition: all 0.3s ease;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  
+  .current-css {
+    background-color: var(--dark-color);
+    color: white;
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+  }
+  
+  .current-css pre {
+    margin: 0;
+    overflow-x: auto;
+  }
+  
+  .current-css code {
+    font-family: 'Courier New', Courier, monospace;
+  }
+  
+  /* Casos de uso */
+  .use-case-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  
+  .use-case-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    gap: 0.5rem;
+  }
+  
+  .use-case-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .use-case-icon {
+    font-size: 2rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  .use-case-card h4 {
+    margin: 0;
+    color: var(--dark-color);
+    text-align: center;
+  }
+  
+  .use-case-card p {
+    margin: 0.5rem 0 0 0;
+    font-size: 0.95rem;
+  }
+  
+  /* Sección de desafío */
+  .challenge-section ul {
+    margin-left: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .challenge-section li {
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 768px) {
+    .content-container {
+      padding: 1rem;
+    }
+    
+    .demo-container, 
+    .properties-grid,
+    .use-case-cards {
+      grid-template-columns: 1fr;
+    }
+    
+    .controls {
+      grid-template-columns: 1fr;
+    }
+  }

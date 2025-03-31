@@ -1,0 +1,375 @@
+/* Estilos específicos para la página de Galería */
+
+/* Contenedor principal */
+.content-container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Secciones explicativas */
+  .explanation, 
+  .implementation, 
+  .gallery-features,
+  .gallery-demo,
+  .gallery-explanation,
+  .challenge-section {
+    margin-bottom: 2.5rem;
+    background-color: white;
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: var(--box-shadow);
+  }
+  
+  .explanation h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+  }
+  
+  .explanation p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+  
+  /* Bloques de código */
+  .code-example {
+    background-color: var(--dark-color);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    overflow-x: auto;
+  }
+  
+  .code-example code {
+    font-family: 'Courier New', Courier, monospace;
+    color: #ecf0f1;
+    white-space: pre;
+  }
+  
+  /* Tarjetas de características */
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    margin-top: 1.5rem;
+  }
+  
+  .feature-card {
+    background-color: var(--light-color);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .feature-icon {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+  }
+  
+  .feature-card h4 {
+    color: var(--dark-color);
+    margin-bottom: 0.5rem;
+  }
+  
+  .mini-code {
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+    padding: 0.5rem;
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    overflow-x: auto;
+  }
+  
+  .mini-code code {
+    font-family: 'Courier New', Courier, monospace;
+  }
+  
+  /* Controles de la galería */
+  .gallery-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .control-btn {
+    background-color: var(--light-color);
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 0.6rem 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .control-btn:hover {
+    background-color: var(--accent-color);
+    color: white;
+  }
+  
+  .control-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+  }
+  
+  /* Contenedor de la galería y estilos base */
+  .gallery-container {
+    position: relative;
+    padding: 0.5rem;
+    background-color: var(--light-color);
+    border-radius: var(--border-radius);
+    min-height: 600px;
+  }
+  
+  .gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    z-index: 1;
+  }
+  
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+  
+  .gallery-item:hover img {
+    transform: scale(1.05);
+  }
+  
+  /* Overlay para información */
+  .item-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    color: white;
+    padding: 1rem;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+  }
+  
+  .gallery-item:hover .item-overlay {
+    transform: translateY(0);
+  }
+  
+  .item-overlay h4 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1rem;
+  }
+  
+  .item-overlay p {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }
+  
+  /* Estilos para el layout tipo Masonry */
+  .masonry-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-auto-rows: 250px;
+    grid-auto-flow: dense;
+    gap: 15px;
+  }
+  
+  .masonry-layout .large {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+  
+  .masonry-layout .wide {
+    grid-column: span 2;
+  }
+  
+  .masonry-layout .tall {
+    grid-row: span 2;
+  }
+  
+  /* Estilos para el layout tipo Grid Regular */
+  .grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-auto-rows: 200px;
+    gap: 15px;
+  }
+  
+  .grid-layout .gallery-item {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+  
+  /* Estilos para el layout tipo Mosaico */
+  .mosaic-layout {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(4, 150px);
+    gap: 15px;
+  }
+  
+  .mosaic-layout .gallery-item:nth-child(1) {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+  }
+  
+  .mosaic-layout .gallery-item:nth-child(2) {
+    grid-column: 3 / span 2;
+    grid-row: 1 / span 3;
+  }
+  
+  .mosaic-layout .gallery-item:nth-child(3) {
+    grid-column: 5 / span 2;
+    grid-row: 1 / span 1;
+  }
+  
+  .mosaic-layout .gallery-item:nth-child(4) {
+    grid-column: 5 / span 1;
+    grid-row: 2 / span 2;
+  }
+  
+  .mosaic-layout .gallery-item:nth-child(5) {
+    grid-column: 6 / span 1;
+    grid-row: 2 / span 1;
+  }
+  
+  .mosaic-layout .gallery-item:nth-child(6) {
+    grid-column: 1 / span 1;
+    grid-row: 3 / span 2;
+  }
+  
+  .mosaic-layout .gallery-item:nth-child(7) {
+    grid-column: 2 / span 1;
+    grid-row: 3 / span 1;
+  }
+  
+  .mosaic-layout .gallery-item:nth-child(8) {
+    grid-column: 2 / span 2;
+    grid-row: 4 / span 1;
+  }
+  
+  .mosaic-layout .gallery-item:nth-child(9) {
+    grid-column: 4 / span 1;
+    grid-row: 4 / span 1;
+  }
+  
+  .mosaic-layout .gallery-item:nth-child(10) {
+    grid-column: 5 / span 2;
+    grid-row: 4 / span 1;
+  }
+  
+  /* Sección de explicación de la galería */
+  .explanation-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  
+  .explanation-item {
+    background-color: var(--light-color);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+  }
+  
+  .explanation-item h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+  }
+  
+  .explanation-item ul {
+    margin-left: 1.5rem;
+    margin-top: 1rem;
+  }
+  
+  .explanation-item li {
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Sección de desafío */
+  .challenge-section ul {
+    margin-left: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .challenge-section li {
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Animaciones adicionales */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  .gallery-item {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 992px) {
+    .explanation-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .content-container {
+      padding: 1rem;
+    }
+    
+    .gallery-controls {
+      flex-wrap: wrap;
+    }
+    
+    .mosaic-layout {
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 150px;
+    }
+    
+    .mosaic-layout .gallery-item {
+      grid-column: span 2 !important;
+      grid-row: span 1 !important;
+    }
+    
+    .mosaic-layout .gallery-item:nth-child(1),
+    .mosaic-layout .gallery-item:nth-child(4) {
+      grid-column: span 2 !important;
+      grid-row: span 2 !important;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .features-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .masonry-layout {
+      grid-template-columns: 1fr 1fr;
+    }
+    
+    .masonry-layout .large {
+      grid-column: span 2;
+      grid-row: span 1;
+    }
+    
+    .mosaic-layout {
+      grid-template-columns: 1fr 1fr;
+    }
+  }

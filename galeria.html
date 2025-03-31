@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galería - FemCoders CSS Grid Examples</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/galeria.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <header class="main-header">
+    <h1 class="site-title">FemCoders CSS Grid Examples</h1>
+  </header>
+
+  <nav class="main-nav">
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-link">Inicio</a></li>
+      <li><a href="holy-grail.html" class="nav-link">Holy Grail</a></li>
+      <li><a href="galeria.html" class="nav-link active">Galería</a></li>
+      <li><a href="grid-implicito-explicito.html" class="nav-link">Grid Implícito/Explícito</a></li>
+      <li><a href="layout-revista.html" class="nav-link">Layout Revista</a></li>
+      <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+    </ul>
+  </nav>
+
+  <main class="content-container">
+    <section class="explanation">
+      <h2>Galería de Imágenes con CSS Grid</h2>
+      <p>Las galerías de imágenes son uno de los casos de uso más poderosos para CSS Grid. Con Grid, puedes crear diseños de galería flexibles, responsivos y visualmente interesantes donde algunas imágenes pueden ocupar más espacio que otras.</p>
+      <p>A diferencia de los métodos tradicionales que requerían muchos contenedores anidados y cálculos complejos, CSS Grid simplifica enormemente la creación de galerías dinámicas.</p>
+    </section>
+
+    <section class="implementation">
+      <h3>Implementación básica</h3>
+      <div class="code-example">
+        <pre><code>
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-auto-rows: 250px;
+  gap: 20px;
+}
+
+.galeria-item {
+  overflow: hidden;
+  position: relative;
+  border-radius: 8px;
+}
+
+.galeria-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.galeria-item:hover img {
+  transform: scale(1.05);
+}
+        </code></pre>
+      </div>
+    </section>
+
+    <section class="gallery-features">
+      <h3>Características avanzadas</h3>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-expand"></i></div>
+          <h4>Imágenes destacadas</h4>
+          <p>Resalta ciertas imágenes haciéndolas ocupar más espacio en la cuadrícula.</p>
+          <div class="mini-code">
+            <code>.destacada { grid-column: span 2; grid-row: span 2; }</code>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
+          <h4>Totalmente responsiva</h4>
+          <p>Se adapta a cualquier tamaño de pantalla manteniendo la estética.</p>
+          <div class="mini-code">
+            <code>grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));</code>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-layer-group"></i></div>
+          <h4>Layout denso</h4>
+          <p>Rellena automáticamente los huecos para un diseño compacto.</p>
+          <div class="mini-code">
+            <code>grid-auto-flow: dense;</code>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-magic"></i></div>
+          <h4>Efectos interactivos</h4>
+          <p>Añade capas de información y animaciones al interactuar.</p>
+          <div class="mini-code">
+            <code>.hover-info { opacity: 0; transition: opacity 0.3s; }</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery-demo">
+      <h3>Demostración</h3>
+      <div class="gallery-controls">
+        <button class="control-btn active" data-layout="masonry">Masonry</button>
+        <button class="control-btn" data-layout="grid">Grid</button>
+        <button class="control-btn" data-layout="mosaic">Mosaico</button>
+      </div>
+      
+      <div class="gallery-container masonry-layout">
+        <div class="gallery-item">
+          <img src="/api/placeholder/600/400" alt="Imagen 1">
+          <div class="item-overlay">
+            <h4>Título de imagen</h4>
+            <p>Descripción breve</p>
+          </div>
+        </div>
+        <div class="gallery-item large">
+          <img src="/api/placeholder/800/600" alt="Imagen 2">
+          <div class="item-overlay">
+            <h4>Imagen destacada</h4>
+            <p>Ocupa más espacio en el grid</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="/api/placeholder/600/400" alt="Imagen 3">
+          <div class="item-overlay">
+            <h4>Título de imagen</h4>
+            <p>Descripción breve</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="/api/placeholder/600/400" alt="Imagen 4">
+          <div class="item-overlay">
+            <h4>Título de imagen</h4>
+            <p>Descripción breve</p>
+          </div>
+        </div>
+        <div class="gallery-item tall">
+          <img src="/api/placeholder/600/800" alt="Imagen 5">
+          <div class="item-overlay">
+            <h4>Imagen vertical</h4>
+            <p>Se extiende verticalmente</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="/api/placeholder/600/400" alt="Imagen 6">
+          <div class="item-overlay">
+            <h4>Título de imagen</h4>
+            <p>Descripción breve</p>
+          </div>
+        </div>
+        <div class="gallery-item wide">
+          <img src="/api/placeholder/800/400" alt="Imagen 7">
+          <div class="item-overlay">
+            <h4>Imagen horizontal</h4>
+            <p>Se extiende horizontalmente</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="/api/placeholder/600/400" alt="Imagen 8">
+          <div class="item-overlay">
+            <h4>Título de imagen</h4>
+            <p>Descripción breve</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="/api/placeholder/600/400" alt="Imagen 9">
+          <div class="item-overlay">
+            <h4>Título de imagen</h4>
+            <p>Descripción breve</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="/api/placeholder/600/400" alt="Imagen 10">
+          <div class="item-overlay">
+            <h4>Título de imagen</h4>
+            <p>Descripción breve</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery-explanation">
+      <h3>Explicación detallada</h3>
+      <div class="explanation-grid">
+        <div class="explanation-item">
+          <h4>Masonry Layout</h4>
+          <p>Inspirado en sitios como Pinterest, este layout crea una disposición de "ladrillos" donde las imágenes encajan perfectamente manteniendo su relación de aspecto.</p>
+          <div class="code-example">
+            <pre><code>
+.masonry-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-auto-rows: 200px;
+  grid-auto-flow: dense;
+  gap: 15px;
+}
+
+.large {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.wide {
+  grid-column: span 2;
+}
+
+.tall {
+  grid-row: span 2;
+}
+            </code></pre>
+          </div>
+        </div>
+        <div class="explanation-item">
+          <h4>Adaptabilidad Responsiva</h4>
+          <p>La combinación de <code>auto-fill</code> con <code>minmax()</code> permite que la galería se adapte automáticamente a cualquier tamaño de pantalla.</p>
+          <ul>
+            <li><strong>auto-fill</strong>: Crea tantas columnas como quepan en el contenedor</li>
+            <li><strong>minmax(250px, 1fr)</strong>: Cada columna debe tener al menos 250px, pero pueden crecer equitativamente</li>
+            <li><strong>grid-auto-flow: dense</strong>: Rellena los huecos automáticamente</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="challenge-section">
+      <h3>Desafío</h3>
+      <p>¿Te animas a mejorar esta galería? Intenta:</p>
+      <ul>
+        <li>Añadir filtros o categorías para mostrar sólo ciertas imágenes</li>
+        <li>Implementar un lightbox para ver las imágenes en tamaño completo</li>
+        <li>Crear un nuevo patrón de distribución para las imágenes</li>
+        <li>Añadir animaciones más elaboradas al interactuar con las imágenes</li>
+      </ul>
+      <p>Puedes usar el código como punto de partida para tus propios proyectos.</p>
+    </section>
+  </main>
+
+  <footer class="main-footer">
+    <p>&copy; 2025 FemCoders Club. Creado con 💜 y CSS Grid.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/galeria.js"></script>
+</body>
+</html>

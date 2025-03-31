@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid Implícito vs Explícito - FemCoders CSS Grid Examples</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/grid-implicito-explicito.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <header class="main-header">
+    <h1 class="site-title">FemCoders CSS Grid Examples</h1>
+  </header>
+
+  <nav class="main-nav">
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-link">Inicio</a></li>
+      <li><a href="holy-grail.html" class="nav-link">Holy Grail</a></li>
+      <li><a href="galeria.html" class="nav-link">Galería</a></li>
+      <li><a href="grid-implicito-explicito.html" class="nav-link active">Grid Implícito/Explícito</a></li>
+      <li><a href="layout-revista.html" class="nav-link">Layout Revista</a></li>
+      <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+    </ul>
+  </nav>
+
+  <main class="content-container">
+    <section class="explanation">
+      <h2>Grid Implícito vs Grid Explícito</h2>
+      <p>Entender la diferencia entre Grid implícito y explícito es fundamental para dominar CSS Grid. Este concepto nos permite controlar cómo se comporta el grid cuando tiene más elementos de los que inicialmente definimos.</p>
+      
+      <div class="definition-cards">
+        <div class="definition-card explicit">
+          <h3>Grid Explícito</h3>
+          <p>El grid explícito es el que defines conscientemente con propiedades como <code>grid-template-columns</code> y <code>grid-template-rows</code>.</p>
+          <div class="icon-container">
+            <i class="fas fa-clipboard-list"></i>
+          </div>
+        </div>
+        
+        <div class="definition-card implicit">
+          <h3>Grid Implícito</h3>
+          <p>El grid implícito es el que el navegador crea automáticamente cuando hay más elementos que celdas definidas en el grid explícito.</p>
+          <div class="icon-container">
+            <i class="fas fa-magic"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="comparison-demo">
+      <h3>Comparación Visual</h3>
+      <p>Observa cómo se comporta un grid con 12 elementos cuando el grid explícito solo define espacio para 6 elementos:</p>
+      
+      <div class="demo-container">
+        <div class="demo-grid explicit-grid">
+          <h4>Grid Explícito (3x2)</h4>
+          <div class="grid-wrapper">
+            <div class="grid-item explicit">1</div>
+            <div class="grid-item explicit">2</div>
+            <div class="grid-item explicit">3</div>
+            <div class="grid-item explicit">4</div>
+            <div class="grid-item explicit">5</div>
+            <div class="grid-item explicit">6</div>
+            <div class="grid-item implicit">7</div>
+            <div class="grid-item implicit">8</div>
+            <div class="grid-item implicit">9</div>
+            <div class="grid-item implicit">10</div>
+            <div class="grid-item implicit">11</div>
+            <div class="grid-item implicit">12</div>
+          </div>
+          <div class="code-snippet">
+            <pre><code>.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 100px);
+  gap: 10px;
+}
+/* Elementos 7-12 van al grid implícito */</code></pre>
+          </div>
+        </div>
+        
+        <div class="demo-grid implicit-controlled">
+          <h4>Grid Implícito Controlado</h4>
+          <div class="grid-wrapper">
+            <div class="grid-item explicit">1</div>
+            <div class="grid-item explicit">2</div>
+            <div class="grid-item explicit">3</div>
+            <div class="grid-item explicit">4</div>
+            <div class="grid-item explicit">5</div>
+            <div class="grid-item explicit">6</div>
+            <div class="grid-item implicit">7</div>
+            <div class="grid-item implicit">8</div>
+            <div class="grid-item implicit">9</div>
+            <div class="grid-item implicit">10</div>
+            <div class="grid-item implicit">11</div>
+            <div class="grid-item implicit">12</div>
+          </div>
+          <div class="code-snippet">
+            <pre><code>.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 100px);
+  grid-auto-rows: 150px;
+  gap: 10px;
+}
+/* Elementos 7-12 con altura controlada */</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid-auto-properties">
+      <h3>Propiedades para Controlar el Grid Implícito</h3>
+      
+      <div class="properties-grid">
+        <div class="property-card">
+          <h4>grid-auto-rows</h4>
+          <p>Define la altura de las filas implícitas que se crean automáticamente.</p>
+          <div class="code-example">
+            <pre><code>grid-auto-rows: 150px; /* Altura fija */
+grid-auto-rows: minmax(100px, auto); /* Altura mínima con extensión automática */</code></pre>
+          </div>
+        </div>
+        
+        <div class="property-card">
+          <h4>grid-auto-columns</h4>
+          <p>Define el ancho de las columnas implícitas que se crean automáticamente.</p>
+          <div class="code-example">
+            <pre><code>grid-auto-columns: 200px; /* Ancho fijo */
+grid-auto-columns: minmax(150px, 1fr); /* Ancho mínimo con distribución proporcional */</code></pre>
+          </div>
+        </div>
+        
+        <div class="property-card">
+          <h4>grid-auto-flow</h4>
+          <p>Controla cómo se colocan automáticamente los elementos en el grid.</p>
+          <div class="code-example">
+            <pre><code>grid-auto-flow: row; /* Elementos adicionales crean nuevas filas (predeterminado) */
+grid-auto-flow: column; /* Elementos adicionales crean nuevas columnas */
+grid-auto-flow: dense; /* Intenta llenar espacios vacíos si es posible */</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="interactive-playground">
+      <h3>Prueba Interactiva</h3>
+      <p>Experimenta con diferentes configuraciones y observa cómo afecta al grid implícito:</p>
+      
+      <div class="controls">
+        <div class="control-group">
+          <label for="explicit-columns">Columnas explícitas:</label>
+          <select id="explicit-columns">
+            <option value="2">2 columnas</option>
+            <option value="3" selected>3 columnas</option>
+            <option value="4">4 columnas</option>
+          </select>
+        </div>
+        
+        <div class="control-group">
+          <label for="explicit-rows">Filas explícitas:</label>
+          <select id="explicit-rows">
+            <option value="1">1 fila</option>
+            <option value="2" selected>2 filas</option>
+            <option value="3">3 filas</option>
+          </select>
+        </div>
+        
+        <div class="control-group">
+          <label for="auto-flow">Grid Auto Flow:</label>
+          <select id="auto-flow">
+            <option value="row" selected>row</option>
+            <option value="column">column</option>
+            <option value="dense">dense</option>
+            <option value="row dense">row dense</option>
+          </select>
+        </div>
+        
+        <div class="control-group">
+          <label for="item-count">Número de elementos:</label>
+          <input type="range" id="item-count" min="6" max="20" value="12" step="1">
+          <span id="item-count-value">12</span>
+        </div>
+
+        <div class="control-group toggle-group">
+          <label>
+            <input type="checkbox" id="show-lines" checked>
+            Mostrar líneas de grid
+          </label>
+        </div>
+      </div>
+      
+      <div class="playground-grid">
+        <!-- Los elementos se generarán con JavaScript -->
+      </div>
+      
+      <div class="current-css">
+        <h4>CSS Generado:</h4>
+        <pre><code id="generated-css">.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 100px);
+  grid-auto-flow: row;
+  gap: 10px;
+}</code></pre>
+      </div>
+    </section>
+
+    <section class="use-cases">
+      <h3>Casos de uso prácticos</h3>
+      
+      <div class="use-case-cards">
+        <div class="use-case-card">
+          <div class="use-case-icon">
+            <i class="fas fa-images"></i>
+          </div>
+          <h4>Galerías Dinámicas</h4>
+          <p>Ideal para cuando no sabes de antemano cuántas imágenes tendrá tu galería. Puedes definir un layout base y dejar que el grid implícito maneje el resto.</p>
+        </div>
+        
+        <div class="use-case-card">
+          <div class="use-case-icon">
+            <i class="fas fa-th-list"></i>
+          </div>
+          <h4>Interfaces de Administración</h4>
+          <p>Para dashboards donde la cantidad de widgets o componentes puede variar según los permisos del usuario o las preferencias.</p>
+        </div>
+        
+        <div class="use-case-card">
+          <div class="use-case-icon">
+            <i class="fas fa-comment-dots"></i>
+          </div>
+          <h4>Feeds de Contenido</h4>
+          <p>Para blogs o redes sociales donde el contenido se carga dinámicamente y necesitas que el layout se adapte automáticamente.</p>
+        </div>
+        
+        <div class="use-case-card">
+          <div class="use-case-icon">
+            <i class="fas fa-shopping-cart"></i>
+          </div>
+          <h4>Catálogos de Productos</h4>
+          <p>Donde los productos pueden tener diferentes tamaños o destacados, y necesitas un layout que se adapte a diferentes cantidades de productos.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="challenge-section">
+      <h3>Desafío</h3>
+      <p>¿Te animas a experimentar con el grid implícito? Intenta:</p>
+      <ul>
+        <li>Crear un layout donde los elementos impares ocupen 2 columnas en el grid implícito</li>
+        <li>Implementar un sistema donde el grid cambie de flujo (row a column) automáticamente en dispositivos móviles</li>
+        <li>Diseñar un feed de noticias donde los artículos destacados ocupen más espacio en el grid</li>
+      </ul>
+      <p>Recuerda que entender cómo funciona el grid implícito te da mucho más control sobre tus layouts, especialmente cuando trabajas con contenido dinámico.</p>
+    </section>
+  </main>
+
+  <footer class="main-footer">
+    <p>&copy; 2025 FemCoders Club. Creado con 💜 y CSS Grid.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/grid-implicito-explicito.js"></script>
+</body>
+</html>

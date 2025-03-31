@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FemCoders CSS Grid Examples</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <header class="main-header">
+    <h1 class="site-title">FemCoders CSS Grid Examples</h1>
+  </header>
+
+  <nav class="main-nav">
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-link active">Inicio</a></li>
+      <li><a href="holy-grail.html" class="nav-link">Holy Grail</a></li>
+      <li><a href="galeria.html" class="nav-link">Galería</a></li>
+      <li><a href="grid-implicito-explicito.html" class="nav-link">Grid Implícito/Explícito</a></li>
+      <li><a href="layout-revista.html" class="nav-link">Layout Revista</a></li>
+      <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+    </ul>
+  </nav>
+
+  <main class="grid-showcase">
+    <!-- Sección principal con descripción -->
+    <section class="intro-section">
+      <h2>Domina el sistema de cuadrículas en tu página web</h2>
+      <p>CSS Grid es una poderosa herramienta que revoluciona la forma en que diseñamos layouts para nuestros sitios web. En este proyecto para la comunidad FemCoders Club, exploraremos cómo dominar este sistema de rejillas y aprovecharlo al máximo en tus proyectos.</p>
+      <div class="grid-diagram">
+        <!-- Diagrama interactivo de Grid -->
+        <div class="grid-lines">
+          <div class="h-line h-line-1"></div>
+          <div class="h-line h-line-2"></div>
+          <div class="h-line h-line-3"></div>
+          <div class="h-line h-line-4"></div>
+          <div class="v-line v-line-1"></div>
+          <div class="v-line v-line-2"></div>
+          <div class="v-line v-line-3"></div>
+          <div class="v-line v-line-4"></div>
+        </div>
+        <div class="grid-terminology">
+          <span class="term term-1">Grid Container</span>
+          <span class="term term-2">Grid Item</span>
+          <span class="term term-3">Grid Line</span>
+          <span class="term term-4">Grid Cell</span>
+          <span class="term term-5">Grid Area</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparativa Flexbox vs Grid -->
+    <section class="comparison-section">
+      <h3>Flexbox vs Grid</h3>
+      <div class="comparison-cards">
+        <div class="card flexbox-card">
+          <h4>Flexbox <i class="fas fa-arrows-alt-h"></i></h4>
+          <p><strong>Unidimensional:</strong> Se enfoca en distribuir elementos en un solo eje (horizontal o vertical)</p>
+          <div class="demo-box flexbox-demo">
+            <div class="demo-item">1</div>
+            <div class="demo-item">2</div>
+            <div class="demo-item">3</div>
+          </div>
+        </div>
+        <div class="card grid-card">
+          <h4>Grid <i class="fas fa-th"></i></h4>
+          <p><strong>Bidimensional:</strong> Trabaja simultáneamente con filas y columnas</p>
+          <div class="demo-box grid-demo">
+            <div class="demo-item">1</div>
+            <div class="demo-item">2</div>
+            <div class="demo-item">3</div>
+            <div class="demo-item">4</div>
+            <div class="demo-item">5</div>
+            <div class="demo-item">6</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ejemplos visuales -->
+    <section class="examples-section">
+      <h3>Ejemplos del proyecto</h3>
+      <div class="examples-grid">
+        <a href="holy-grail.html" class="example-card">
+          <h4>Holy Grail Layout</h4>
+          <div class="example-preview holy-grail-preview">
+            <div class="preview-header"></div>
+            <div class="preview-sidebar"></div>
+            <div class="preview-content"></div>
+            <div class="preview-aside"></div>
+            <div class="preview-footer"></div>
+          </div>
+        </a>
+        <a href="galeria.html" class="example-card">
+          <h4>Galería de Imágenes</h4>
+          <div class="example-preview gallery-preview">
+            <div class="preview-img"></div>
+            <div class="preview-img preview-img-large"></div>
+            <div class="preview-img"></div>
+            <div class="preview-img"></div>
+            <div class="preview-img"></div>
+          </div>
+        </a>
+        <a href="layout-revista.html" class="example-card">
+          <h4>Layout Revista</h4>
+          <div class="example-preview magazine-preview">
+            <div class="preview-headline"></div>
+            <div class="preview-article"></div>
+            <div class="preview-sidebar"></div>
+            <div class="preview-feature"></div>
+          </div>
+        </a>
+        <a href="dashboard.html" class="example-card">
+          <h4>Dashboard</h4>
+          <div class="example-preview dashboard-preview">
+            <div class="preview-header"></div>
+            <div class="preview-chart"></div>
+            <div class="preview-stats"></div>
+            <div class="preview-table"></div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Código básico -->
+    <section class="code-section">
+      <h3>Código básico de CSS Grid</h3>
+      <div class="code-container">
+        <pre><code>
+.contenedor {
+  display: grid;
+  grid-template-columns: 200px 1fr 1fr;
+  grid-template-rows: 100px auto 100px;
+  gap: 20px;
+}
+
+.item-1 {
+  grid-column: 1 / 3;
+  grid-row: 1 / 2;
+}
+
+.item-2 {
+  grid-column: 3;
+  grid-row: 1 / 3;
+}
+        </code></pre>
+      </div>
+    </section>
+
+    <!-- Comunidad y enlaces -->
+    <section class="community-section">
+      <h3>¡Únete a la comunidad FemCoders!</h3>
+      <p>Comparte tus creaciones usando CSS Grid con el hashtag <strong>#FemCodersGrid</strong></p>
+      <div class="social-links">
+        <a href="https://github.com/femcoders-club/css-grid-examples" class="social-link"><i class="fab fa-github"></i> GitHub</a>
+        <a href="#" class="social-link"><i class="fab fa-slack"></i> Slack</a>
+        <a href="#" class="social-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="main-footer">
+    <p>&copy; 2025 FemCoders Club. Creado con 💜 y CSS Grid.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
