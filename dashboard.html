@@ -1,326 +1,456 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard - FemCoders CSS Grid Examples</title>
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/dashboard.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<body>
-  <header class="main-header">
-    <h1 class="site-title">FemCoders CSS Grid Examples</h1>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - FemCoders CSS Grid Examples</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/dashboard.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="main-header">
+      <h1 class="site-title">FemCoders CSS Grid Examples</h1>
+    </header>
 
-  <nav class="main-nav">
-    <ul class="nav-links">
-      <li><a href="index.html" class="nav-link">Inicio</a></li>
-      <li><a href="holy-grail.html" class="nav-link">Holy Grail</a></li>
-      <li><a href="galeria.html" class="nav-link">Galería</a></li>
-      <li><a href="grid-implicito-explicito.html" class="nav-link">Grid Implícito/Explícito</a></li>
-      <li><a href="layout-revista.html" class="nav-link">Layout Revista</a></li>
-      <li><a href="dashboard.html" class="nav-link active">Dashboard</a></li>
-    </ul>
-  </nav>
-
-  <main class="content-container">
-    <section class="explanation">
-      <h2>Dashboard Administrativo con CSS Grid</h2>
-      <p>Los dashboards son interfaces que concentran información importante y controles en una sola vista. CSS Grid es perfecto para crear dashboards porque:</p>
-      <ul>
-        <li>Permite organizar widgets de diferentes tamaños en una cuadrícula coherente</li>
-        <li>Facilita la reorganización del contenido según la importancia y el espacio disponible</li>
-        <li>Ofrece control preciso sobre el posicionamiento de elementos</li>
-        <li>Adapta el diseño a diferentes tamaños de pantalla manteniendo la usabilidad</li>
+    <nav class="main-nav">
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Inicio</a></li>
+        <li><a href="holy-grail.html" class="nav-link">Holy Grail</a></li>
+        <li><a href="galeria.html" class="nav-link">Galería</a></li>
+        <li>
+          <a href="grid-implicito-explicito.html" class="nav-link"
+            >Grid Implícito/Explícito</a
+          >
+        </li>
+        <li>
+          <a href="layout-revista.html" class="nav-link">Layout Revista</a>
+        </li>
+        <li><a href="dashboard.html" class="nav-link active">Dashboard</a></li>
       </ul>
-      <p>En esta página, exploraremos cómo construir un dashboard administrativo completo utilizando las capacidades de CSS Grid.</p>
-    </section>
+    </nav>
 
-    <section class="dashboard-demo">
-      <h3>Demostración de Dashboard Administrativo</h3>
-      
-      <div class="dashboard-controls">
-        <div class="dashboard-user">
-          <div class="user-avatar">
-            <i class="fas fa-user"></i>
-          </div>
-          <div class="user-info">
-            <div class="user-name">Ana Martínez</div>
-            <div class="user-role">Administradora</div>
-          </div>
-        </div>
-        <div class="date-display">
-          <i class="far fa-calendar-alt"></i>
-          <span id="current-date">Lunes, 31 de Marzo, 2025</span>
-        </div>
-        <div class="view-controls">
-          <button class="view-btn active" data-view="grid" title="Ver en modo cuadrícula"><i class="fas fa-th"></i> Grid</button>
-          <button class="view-btn" data-view="compact" title="Ver en modo compacto"><i class="fas fa-list"></i> Compacto</button>
-        </div>
-      </div>
-      
-      <div class="dashboard-container grid-view">
-        <!-- Widget de Estadísticas -->
-        <div class="dashboard-widget stats-widget">
-          <div class="widget-header">
-            <h4>Estadísticas</h4>
-            <div class="widget-controls">
-              <button class="widget-btn" title="Actualizar estadísticas"><i class="fas fa-sync-alt"></i><span class="sr-only">Actualizar</span></button>
-              <button class="widget-btn" title="Más opciones de estadísticas"><i class="fas fa-ellipsis-v"></i><span class="sr-only">Más opciones</span></button>
-            </div>
-          </div>
-          <div class="widget-content">
-            <div class="stats-grid">
-              <div class="stat-item">
-                <div class="stat-value">2,459</div>
-                <div class="stat-label">Visitas</div>
-                <div class="stat-icon blue"><i class="fas fa-eye"></i></div>
-              </div>
-              <div class="stat-item">
-                <div class="stat-value">6,851</div>
-                <div class="stat-label">Suscriptores</div>
-                <div class="stat-icon purple"><i class="fas fa-users"></i></div>
-              </div>
-              <div class="stat-item">
-                <div class="stat-value">18,132</div>
-                <div class="stat-label">Impresiones</div>
-                <div class="stat-icon green"><i class="fas fa-chart-line"></i></div>
-              </div>
-              <div class="stat-item">
-                <div class="stat-value">$9,271</div>
-                <div class="stat-label">Ingresos</div>
-                <div class="stat-icon orange"><i class="fas fa-dollar-sign"></i></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Widget de Gráfico -->
-        <div class="dashboard-widget chart-widget">
-          <div class="widget-header">
-            <h4>Usuarios por mes</h4>
-            <div class="widget-controls">
-              <button class="widget-btn" title="Actualizar gráfico"><i class="fas fa-sync-alt"></i><span class="sr-only">Actualizar</span></button>
-              <button class="widget-btn" title="Más opciones de gráfico"><i class="fas fa-ellipsis-v"></i><span class="sr-only">Más opciones</span></button>
-            </div>
-          </div>
-          <div class="widget-content">
-            <div class="chart-container">
-              <div class="chart-bars">
-                <div class="chart-bar" style="height: 60%;" data-value="248">
-                  <div class="chart-tooltip">Ene: 248</div>
-                </div>
-                <div class="chart-bar" style="height: 45%;" data-value="186">
-                  <div class="chart-tooltip">Feb: 186</div>
-                </div>
-                <div class="chart-bar" style="height: 70%;" data-value="290">
-                  <div class="chart-tooltip">Mar: 290</div>
-                </div>
-                <div class="chart-bar" style="height: 65%;" data-value="268">
-                  <div class="chart-tooltip">Abr: 268</div>
-                </div>
-                <div class="chart-bar" style="height: 80%;" data-value="330">
-                  <div class="chart-tooltip">May: 330</div>
-                </div>
-                <div class="chart-bar" style="height: 90%;" data-value="372">
-                  <div class="chart-tooltip">Jun: 372</div>
-                </div>
-              </div>
-              <div class="chart-labels">
-                <div class="chart-label">Ene</div>
-                <div class="chart-label">Feb</div>
-                <div class="chart-label">Mar</div>
-                <div class="chart-label">Abr</div>
-                <div class="chart-label">May</div>
-                <div class="chart-label">Jun</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Widget de Tareas -->
-        <div class="dashboard-widget tasks-widget">
-          <div class="widget-header">
-            <h4>Tareas pendientes</h4>
-            <div class="widget-controls">
-              <button class="widget-btn" title="Añadir nueva tarea"><i class="fas fa-plus"></i><span class="sr-only">Añadir tarea</span></button>
-              <button class="widget-btn" title="Más opciones de tareas"><i class="fas fa-ellipsis-v"></i><span class="sr-only">Más opciones</span></button>
-            </div>
-          </div>
-          <div class="widget-content">
-            <ul class="tasks-list">
-              <li class="task-item">
-                <input type="checkbox" id="task1">
-                <label for="task1">Actualizar documentación de CSS Grid</label>
-                <div class="task-meta">
-                  <span class="task-priority high">Alta</span>
-                  <span class="task-date">Hoy</span>
-                </div>
-              </li>
-              <li class="task-item">
-                <input type="checkbox" id="task2">
-                <label for="task2">Revisar pull requests en GitHub</label>
-                <div class="task-meta">
-                  <span class="task-priority medium">Media</span>
-                  <span class="task-date">Mañana</span>
-                </div>
-              </li>
-              <li class="task-item">
-                <input type="checkbox" id="task3" checked>
-                <label for="task3">Corregir problemas de responsive</label>
-                <div class="task-meta">
-                  <span class="task-priority high">Alta</span>
-                  <span class="task-date">Completada</span>
-                </div>
-              </li>
-              <li class="task-item">
-                <input type="checkbox" id="task4">
-                <label for="task4">Preparar taller de CSS Grid</label>
-                <div class="task-meta">
-                  <span class="task-priority low">Baja</span>
-                  <span class="task-date">2 Abr</span>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-        
-        <!-- Widget de Actividad -->
-        <div class="dashboard-widget activity-widget">
-          <div class="widget-header">
-            <h4>Actividad reciente</h4>
-            <div class="widget-controls">
-              <button class="widget-btn" title="Actualizar actividades"><i class="fas fa-sync-alt"></i><span class="sr-only">Actualizar</span></button>
-              <button class="widget-btn" title="Más opciones de actividad"><i class="fas fa-ellipsis-v"></i><span class="sr-only">Más opciones</span></button>
-            </div>
-          </div>
-          <div class="widget-content">
-            <div class="activity-timeline">
-              <div class="activity-item">
-                <div class="activity-icon blue"><i class="fas fa-code"></i></div>
-                <div class="activity-content">
-                  <div class="activity-title">Nueva PR creada</div>
-                  <div class="activity-desc">Laura creó un PR para actualizar la página de Holy Grail</div>
-                  <div class="activity-time">hace 10 minutos</div>
-                </div>
-              </div>
-              <div class="activity-item">
-                <div class="activity-icon green"><i class="fas fa-user-plus"></i></div>
-                <div class="activity-content">
-                  <div class="activity-title">Nuevo miembro</div>
-                  <div class="activity-desc">Carlos se unió al equipo de desarrollo</div>
-                  <div class="activity-time">hace 1 hora</div>
-                </div>
-              </div>
-              <div class="activity-item">
-                <div class="activity-icon purple"><i class="fas fa-tasks"></i></div>
-                <div class="activity-content">
-                  <div class="activity-title">Tarea completada</div>
-                  <div class="activity-desc">Ana completó la tarea "Revisar CSS de galería"</div>
-                  <div class="activity-time">hace 3 horas</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Widget de Recursos -->
-        <div class="dashboard-widget resources-widget">
-          <div class="widget-header">
-            <h4>Recursos de CSS Grid</h4>
-            <div class="widget-controls">
-              <button class="widget-btn" title="Más opciones de recursos"><i class="fas fa-ellipsis-v"></i><span class="sr-only">Más opciones</span></button>
-            </div>
-          </div>
-          <div class="widget-content">
-            <div class="resources-list">
-              <a href="#" class="resource-item">
-                <div class="resource-icon"><i class="fas fa-book"></i></div>
-                <div class="resource-info">
-                  <div class="resource-title">MDN Web Docs - CSS Grid</div>
-                  <div class="resource-desc">Documentación completa de CSS Grid</div>
-                </div>
-              </a>
-              <a href="#" class="resource-item">
-                <div class="resource-icon"><i class="fas fa-laptop-code"></i></div>
-                <div class="resource-info">
-                  <div class="resource-title">CSS Grid Garden</div>
-                  <div class="resource-desc">Juego interactivo para aprender Grid</div>
-                </div>
-              </a>
-              <a href="#" class="resource-item">
-                <div class="resource-icon"><i class="fas fa-video"></i></div>
-                <div class="resource-info">
-                  <div class="resource-title">Curso CSS Grid en YouTube</div>
-                  <div class="resource-desc">Tutoriales paso a paso</div>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Widget de estado del proyecto -->
-        <div class="dashboard-widget project-widget">
-          <div class="widget-header">
-            <h4>Estado del proyecto</h4>
-            <div class="widget-controls">
-              <button class="widget-btn" title="Actualizar estado del proyecto"><i class="fas fa-sync-alt"></i><span class="sr-only">Actualizar</span></button>
-              <button class="widget-btn" title="Más opciones de proyecto"><i class="fas fa-ellipsis-v"></i><span class="sr-only">Más opciones</span></button>
-            </div>
-          </div>
-          <div class="widget-content">
-            <div class="project-progress">
-              <div class="progress-item">
-                <div class="progress-label">
-                  <span>Documentación</span>
-                  <span>75%</span>
-                </div>
-                <div class="progress-bar">
-                  <div class="progress-fill" style="width: 75%;" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-              <div class="progress-item">
-                <div class="progress-label">
-                  <span>Implementación</span>
-                  <span>90%</span>
-                </div>
-                <div class="progress-bar">
-                  <div class="progress-fill" style="width: 90%;" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-              <div class="progress-item">
-                <div class="progress-label">
-                  <span>Pruebas</span>
-                  <span>60%</span>
-                </div>
-                <div class="progress-bar">
-                  <div class="progress-fill" style="width: 60%;" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-              <div class="progress-item">
-                <div class="progress-label">
-                  <span>Entrega</span>
-                  <span>25%</span>
-                </div>
-                <div class="progress-bar">
-                  <div class="progress-fill" style="width: 25%;" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <main class="content-container">
+      <section class="explanation">
+        <h2>Dashboard Administrativo con CSS Grid</h2>
+        <p>
+          Los dashboards son interfaces que concentran información importante y
+          controles en una sola vista. CSS Grid es perfecto para crear
+          dashboards porque:
+        </p>
+        <ul>
+          <li>
+            Permite organizar widgets de diferentes tamaños en una cuadrícula
+            coherente
+          </li>
+          <li>
+            Facilita la reorganización del contenido según la importancia y el
+            espacio disponible
+          </li>
+          <li>Ofrece control preciso sobre el posicionamiento de elementos</li>
+          <li>
+            Adapta el diseño a diferentes tamaños de pantalla manteniendo la
+            usabilidad
+          </li>
+        </ul>
+        <p>
+          En esta página, exploraremos cómo construir un dashboard
+          administrativo completo utilizando las capacidades de CSS Grid.
+        </p>
+      </section>
 
-    <section class="code-explanation">
-      <h3>Implementación del Dashboard con Grid</h3>
-      
-      <div class="grid-layout-explanation">
-        <h4>Estructura base del dashboard</h4>
-        <p>El layout de dashboard utiliza una cuadrícula flexible que se adapta a diferentes tamaños de pantalla:</p>
-        <div class="code-example">
-          <pre><code>
+      <section class="dashboard-demo">
+        <h3>Demostración de Dashboard Administrativo</h3>
+
+        <div class="dashboard-controls">
+          <div class="dashboard-user">
+            <div class="user-avatar">
+              <i class="fas fa-user"></i>
+            </div>
+            <div class="user-info">
+              <div class="user-name">Ana Martínez</div>
+              <div class="user-role">Administradora</div>
+            </div>
+          </div>
+          <div class="date-display">
+            <i class="far fa-calendar-alt"></i>
+            <span id="current-date">Lunes, 31 de Marzo, 2025</span>
+          </div>
+          <div class="view-controls">
+            <button
+              class="view-btn active"
+              data-view="grid"
+              title="Ver en modo cuadrícula"
+            >
+              <i class="fas fa-th"></i> Grid
+            </button>
+            <button
+              class="view-btn"
+              data-view="compact"
+              title="Ver en modo compacto"
+            >
+              <i class="fas fa-list"></i> Compacto
+            </button>
+          </div>
+        </div>
+
+        <div class="dashboard-container grid-view">
+          <!-- Widget de Estadísticas -->
+          <div class="dashboard-widget stats-widget">
+            <div class="widget-header">
+              <h4>Estadísticas</h4>
+              <div class="widget-controls">
+                <button class="widget-btn" title="Actualizar estadísticas">
+                  <i class="fas fa-sync-alt"></i
+                  ><span class="sr-only">Actualizar</span>
+                </button>
+                <button class="widget-btn" title="Más opciones de estadísticas">
+                  <i class="fas fa-ellipsis-v"></i
+                  ><span class="sr-only">Más opciones</span>
+                </button>
+              </div>
+            </div>
+            <div class="widget-content">
+              <div class="stats-grid">
+                <div class="stat-item">
+                  <div class="stat-value">2,459</div>
+                  <div class="stat-label">Visitas</div>
+                  <div class="stat-icon blue"><i class="fas fa-eye"></i></div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-value">6,851</div>
+                  <div class="stat-label">Suscriptores</div>
+                  <div class="stat-icon purple">
+                    <i class="fas fa-users"></i>
+                  </div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-value">18,132</div>
+                  <div class="stat-label">Impresiones</div>
+                  <div class="stat-icon green">
+                    <i class="fas fa-chart-line"></i>
+                  </div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-value">$9,271</div>
+                  <div class="stat-label">Ingresos</div>
+                  <div class="stat-icon orange">
+                    <i class="fas fa-dollar-sign"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Widget de Gráfico -->
+          <div class="dashboard-widget chart-widget">
+            <div class="widget-header">
+              <h4>Usuarios por mes</h4>
+              <div class="widget-controls">
+                <button class="widget-btn" title="Actualizar gráfico">
+                  <i class="fas fa-sync-alt"></i
+                  ><span class="sr-only">Actualizar</span>
+                </button>
+                <button class="widget-btn" title="Más opciones de gráfico">
+                  <i class="fas fa-ellipsis-v"></i
+                  ><span class="sr-only">Más opciones</span>
+                </button>
+              </div>
+            </div>
+            <div class="widget-content">
+              <div class="chart-container">
+                <div class="chart-bars">
+                  <div class="chart-bar" style="height: 60%" data-value="248">
+                    <div class="chart-tooltip">Ene: 248</div>
+                  </div>
+                  <div class="chart-bar" style="height: 45%" data-value="186">
+                    <div class="chart-tooltip">Feb: 186</div>
+                  </div>
+                  <div class="chart-bar" style="height: 70%" data-value="290">
+                    <div class="chart-tooltip">Mar: 290</div>
+                  </div>
+                  <div class="chart-bar" style="height: 65%" data-value="268">
+                    <div class="chart-tooltip">Abr: 268</div>
+                  </div>
+                  <div class="chart-bar" style="height: 80%" data-value="330">
+                    <div class="chart-tooltip">May: 330</div>
+                  </div>
+                  <div class="chart-bar" style="height: 90%" data-value="372">
+                    <div class="chart-tooltip">Jun: 372</div>
+                  </div>
+                </div>
+                <div class="chart-labels">
+                  <div class="chart-label">Ene</div>
+                  <div class="chart-label">Feb</div>
+                  <div class="chart-label">Mar</div>
+                  <div class="chart-label">Abr</div>
+                  <div class="chart-label">May</div>
+                  <div class="chart-label">Jun</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Widget de Tareas -->
+          <div class="dashboard-widget tasks-widget">
+            <div class="widget-header">
+              <h4>Tareas pendientes</h4>
+              <div class="widget-controls">
+                <button class="widget-btn" title="Añadir nueva tarea">
+                  <i class="fas fa-plus"></i
+                  ><span class="sr-only">Añadir tarea</span>
+                </button>
+                <button class="widget-btn" title="Más opciones de tareas">
+                  <i class="fas fa-ellipsis-v"></i
+                  ><span class="sr-only">Más opciones</span>
+                </button>
+              </div>
+            </div>
+            <div class="widget-content">
+              <ul class="tasks-list">
+                <li class="task-item">
+                  <input type="checkbox" id="task1" />
+                  <label for="task1"
+                    >Actualizar documentación de CSS Grid</label
+                  >
+                  <div class="task-meta">
+                    <span class="task-priority high">Alta</span>
+                    <span class="task-date">Hoy</span>
+                  </div>
+                </li>
+                <li class="task-item">
+                  <input type="checkbox" id="task2" />
+                  <label for="task2">Revisar pull requests en GitHub</label>
+                  <div class="task-meta">
+                    <span class="task-priority medium">Media</span>
+                    <span class="task-date">Mañana</span>
+                  </div>
+                </li>
+                <li class="task-item">
+                  <input type="checkbox" id="task3" checked />
+                  <label for="task3">Corregir problemas de responsive</label>
+                  <div class="task-meta">
+                    <span class="task-priority high">Alta</span>
+                    <span class="task-date">Completada</span>
+                  </div>
+                </li>
+                <li class="task-item">
+                  <input type="checkbox" id="task4" />
+                  <label for="task4">Preparar taller de CSS Grid</label>
+                  <div class="task-meta">
+                    <span class="task-priority low">Baja</span>
+                    <span class="task-date">2 Abr</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Widget de Actividad -->
+          <div class="dashboard-widget activity-widget">
+            <div class="widget-header">
+              <h4>Actividad reciente</h4>
+              <div class="widget-controls">
+                <button class="widget-btn" title="Actualizar actividades">
+                  <i class="fas fa-sync-alt"></i
+                  ><span class="sr-only">Actualizar</span>
+                </button>
+                <button class="widget-btn" title="Más opciones de actividad">
+                  <i class="fas fa-ellipsis-v"></i
+                  ><span class="sr-only">Más opciones</span>
+                </button>
+              </div>
+            </div>
+            <div class="widget-content">
+              <div class="activity-timeline">
+                <div class="activity-item">
+                  <div class="activity-icon blue">
+                    <i class="fas fa-code"></i>
+                  </div>
+                  <div class="activity-content">
+                    <div class="activity-title">Nueva PR creada</div>
+                    <div class="activity-desc">
+                      Laura creó un PR para actualizar la página de Holy Grail
+                    </div>
+                    <div class="activity-time">hace 10 minutos</div>
+                  </div>
+                </div>
+                <div class="activity-item">
+                  <div class="activity-icon green">
+                    <i class="fas fa-user-plus"></i>
+                  </div>
+                  <div class="activity-content">
+                    <div class="activity-title">Nuevo miembro</div>
+                    <div class="activity-desc">
+                      Carlos se unió al equipo de desarrollo
+                    </div>
+                    <div class="activity-time">hace 1 hora</div>
+                  </div>
+                </div>
+                <div class="activity-item">
+                  <div class="activity-icon purple">
+                    <i class="fas fa-tasks"></i>
+                  </div>
+                  <div class="activity-content">
+                    <div class="activity-title">Tarea completada</div>
+                    <div class="activity-desc">
+                      Ana completó la tarea "Revisar CSS de galería"
+                    </div>
+                    <div class="activity-time">hace 3 horas</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Widget de Recursos -->
+          <div class="dashboard-widget resources-widget">
+            <div class="widget-header">
+              <h4>Recursos de CSS Grid</h4>
+              <div class="widget-controls">
+                <button class="widget-btn" title="Más opciones de recursos">
+                  <i class="fas fa-ellipsis-v"></i
+                  ><span class="sr-only">Más opciones</span>
+                </button>
+              </div>
+            </div>
+            <div class="widget-content">
+              <div class="resources-list">
+                <a href="#" class="resource-item">
+                  <div class="resource-icon"><i class="fas fa-book"></i></div>
+                  <div class="resource-info">
+                    <div class="resource-title">MDN Web Docs - CSS Grid</div>
+                    <div class="resource-desc">
+                      Documentación completa de CSS Grid
+                    </div>
+                  </div>
+                </a>
+                <a href="#" class="resource-item">
+                  <div class="resource-icon">
+                    <i class="fas fa-laptop-code"></i>
+                  </div>
+                  <div class="resource-info">
+                    <div class="resource-title">CSS Grid Garden</div>
+                    <div class="resource-desc">
+                      Juego interactivo para aprender Grid
+                    </div>
+                  </div>
+                </a>
+                <a href="#" class="resource-item">
+                  <div class="resource-icon"><i class="fas fa-video"></i></div>
+                  <div class="resource-info">
+                    <div class="resource-title">Curso CSS Grid en YouTube</div>
+                    <div class="resource-desc">Tutoriales paso a paso</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Widget de estado del proyecto -->
+          <div class="dashboard-widget project-widget">
+            <div class="widget-header">
+              <h4>Estado del proyecto</h4>
+              <div class="widget-controls">
+                <button
+                  class="widget-btn"
+                  title="Actualizar estado del proyecto"
+                >
+                  <i class="fas fa-sync-alt"></i
+                  ><span class="sr-only">Actualizar</span>
+                </button>
+                <button class="widget-btn" title="Más opciones de proyecto">
+                  <i class="fas fa-ellipsis-v"></i
+                  ><span class="sr-only">Más opciones</span>
+                </button>
+              </div>
+            </div>
+            <div class="widget-content">
+              <div class="project-progress">
+                <div class="progress-item">
+                  <div class="progress-label">
+                    <span>Documentación</span>
+                    <span>75%</span>
+                  </div>
+                  <div class="progress-bar">
+                    <div
+                      class="progress-fill"
+                      style="width: 75%"
+                      role="progressbar"
+                      aria-valuenow="75"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    ></div>
+                  </div>
+                </div>
+                <div class="progress-item">
+                  <div class="progress-label">
+                    <span>Implementación</span>
+                    <span>90%</span>
+                  </div>
+                  <div class="progress-bar">
+                    <div
+                      class="progress-fill"
+                      style="width: 90%"
+                      role="progressbar"
+                      aria-valuenow="90"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    ></div>
+                  </div>
+                </div>
+                <div class="progress-item">
+                  <div class="progress-label">
+                    <span>Pruebas</span>
+                    <span>60%</span>
+                  </div>
+                  <div class="progress-bar">
+                    <div
+                      class="progress-fill"
+                      style="width: 60%"
+                      role="progressbar"
+                      aria-valuenow="60"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    ></div>
+                  </div>
+                </div>
+                <div class="progress-item">
+                  <div class="progress-label">
+                    <span>Entrega</span>
+                    <span>25%</span>
+                  </div>
+                  <div class="progress-bar">
+                    <div
+                      class="progress-fill"
+                      style="width: 25%"
+                      role="progressbar"
+                      aria-valuenow="25"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="code-explanation">
+        <h3>Implementación del Dashboard con Grid</h3>
+
+        <div class="grid-layout-explanation">
+          <h4>Estructura base del dashboard</h4>
+          <p>
+            El layout de dashboard utiliza una cuadrícula flexible que se adapta
+            a diferentes tamaños de pantalla:
+          </p>
+          <div class="code-example">
+            <pre><code>
 .dashboard-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -358,14 +488,17 @@
   grid-row: 4 / 5;
 }
           </code></pre>
+          </div>
         </div>
-      </div>
-      
-      <div class="responsive-techniques">
-        <h4>Adaptación para dispositivos móviles</h4>
-        <p>En pantallas más pequeñas, reorganizamos los widgets para una mejor visualización:</p>
-        <div class="code-example">
-          <pre><code>
+
+        <div class="responsive-techniques">
+          <h4>Adaptación para dispositivos móviles</h4>
+          <p>
+            En pantallas más pequeñas, reorganizamos los widgets para una mejor
+            visualización:
+          </p>
+          <div class="code-example">
+            <pre><code>
 @media (max-width: 992px) {
   .dashboard-container {
     grid-template-columns: repeat(2, 1fr);
@@ -394,82 +527,100 @@
   }
 }
           </code></pre>
-        </div>
-      </div>
-    </section>
-
-    <section class="layout-patterns">
-      <h3>Patrones comunes en dashboards</h3>
-      
-      <div class="patterns-grid">
-        <div class="pattern-card">
-          <h4>Layout de métricas</h4>
-          <div class="pattern-preview metrics-layout">
-            <div class="metric1"></div>
-            <div class="metric2"></div>
-            <div class="metric3"></div>
-            <div class="metric4"></div>
           </div>
-          <p>Perfecto para mostrar KPIs y estadísticas importantes en la parte superior.</p>
         </div>
-        
-        <div class="pattern-card">
-          <h4>Layout de pantalla dividida</h4>
-          <div class="pattern-preview split-layout">
-            <div class="sidebar-nav"></div>
-            <div class="main-content">
-              <div class="header"></div>
-              <div class="content1"></div>
-              <div class="content2"></div>
+      </section>
+
+      <section class="layout-patterns">
+        <h3>Patrones comunes en dashboards</h3>
+
+        <div class="patterns-grid">
+          <div class="pattern-card">
+            <h4>Layout de métricas</h4>
+            <div class="pattern-preview metrics-layout">
+              <div class="metric1"></div>
+              <div class="metric2"></div>
+              <div class="metric3"></div>
+              <div class="metric4"></div>
             </div>
+            <p>
+              Perfecto para mostrar KPIs y estadísticas importantes en la parte
+              superior.
+            </p>
           </div>
-          <p>Navegación lateral fija con área de contenido principal scroll independiente.</p>
-        </div>
-        
-        <div class="pattern-card">
-          <h4>Layout de widgets libres</h4>
-          <div class="pattern-preview widgets-layout">
-            <div class="widget1"></div>
-            <div class="widget2"></div>
-            <div class="widget3"></div>
-            <div class="widget4"></div>
-            <div class="widget5"></div>
-            <div class="widget6"></div>
+
+          <div class="pattern-card">
+            <h4>Layout de pantalla dividida</h4>
+            <div class="pattern-preview split-layout">
+              <div class="sidebar-nav"></div>
+              <div class="main-content">
+                <div class="header"></div>
+                <div class="content1"></div>
+                <div class="content2"></div>
+              </div>
+            </div>
+            <p>
+              Navegación lateral fija con área de contenido principal scroll
+              independiente.
+            </p>
           </div>
-          <p>Widgets de tamaño uniforme que se redistribuyen automáticamente.</p>
-        </div>
-        
-        <div class="pattern-card">
-          <h4>Layout con áreas destacadas</h4>
-          <div class="pattern-preview featured-layout">
-            <div class="featured-widget"></div>
-            <div class="normal-widget1"></div>
-            <div class="normal-widget2"></div>
-            <div class="normal-widget3"></div>
+
+          <div class="pattern-card">
+            <h4>Layout de widgets libres</h4>
+            <div class="pattern-preview widgets-layout">
+              <div class="widget1"></div>
+              <div class="widget2"></div>
+              <div class="widget3"></div>
+              <div class="widget4"></div>
+              <div class="widget5"></div>
+              <div class="widget6"></div>
+            </div>
+            <p>
+              Widgets de tamaño uniforme que se redistribuyen automáticamente.
+            </p>
           </div>
-          <p>Widget principal destacado con widgets secundarios a su alrededor.</p>
+
+          <div class="pattern-card">
+            <h4>Layout con áreas destacadas</h4>
+            <div class="pattern-preview featured-layout">
+              <div class="featured-widget"></div>
+              <div class="normal-widget1"></div>
+              <div class="normal-widget2"></div>
+              <div class="normal-widget3"></div>
+            </div>
+            <p>
+              Widget principal destacado con widgets secundarios a su alrededor.
+            </p>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="challenge-section">
-      <h3>Desafío</h3>
-      <p>¿Te animas a mejorar este dashboard? Intenta:</p>
-      <ul>
-        <li>Añadir un widget con una visualización de datos diferente (gráfico circular, mapa de calor, etc.)</li>
-        <li>Implementar funcionalidad drag-and-drop para reordenar widgets</li>
-        <li>Crear un modo oscuro para el dashboard</li>
-        <li>Añadir animaciones cuando los widgets se cargan o actualizan</li>
-      </ul>
-      <p>Los dashboards son un excelente caso de uso para CSS Grid y permiten infinitas posibilidades de personalización.</p>
-    </section>
-  </main>
+      <section class="challenge-section">
+        <h3>Desafío</h3>
+        <p>¿Te animas a mejorar este dashboard? Intenta:</p>
+        <ul>
+          <li>
+            Añadir un widget con una visualización de datos diferente (gráfico
+            circular, mapa de calor, etc.)
+          </li>
+          <li>
+            Implementar funcionalidad drag-and-drop para reordenar widgets
+          </li>
+          <li>Crear un modo oscuro para el dashboard</li>
+          <li>Añadir animaciones cuando los widgets se cargan o actualizan</li>
+        </ul>
+        <p>
+          Los dashboards son un excelente caso de uso para CSS Grid y permiten
+          infinitas posibilidades de personalización.
+        </p>
+      </section>
+    </main>
 
-  <footer class="main-footer">
-    <p>&copy; 2025 FemCoders Club. Creado con 💜 y CSS Grid.</p>
-  </footer>
+    <footer class="main-footer">
+      <p>&copy; 2025 FemCoders Club. Creado con 💜 y CSS Grid.</p>
+    </footer>
 
-  <script src="js/main.js"></script>
-  <script src="js/dashboard.js"></script>
-</body>
+    <script src="js/main.js"></script>
+    <script src="js/dashboard.js"></script>
+  </body>
 </html>

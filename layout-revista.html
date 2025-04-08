@@ -1,152 +1,237 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Layout Revista - FemCoders CSS Grid Examples</title>
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/layout-revista.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<body>
-  <header class="main-header">
-    <h1 class="site-title">FemCoders CSS Grid Examples</h1>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Layout Revista - FemCoders CSS Grid Examples</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/layout-revista.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="main-header">
+      <h1 class="site-title">FemCoders CSS Grid Examples</h1>
+    </header>
 
-  <nav class="main-nav">
-    <ul class="nav-links">
-      <li><a href="index.html" class="nav-link">Inicio</a></li>
-      <li><a href="holy-grail.html" class="nav-link">Holy Grail</a></li>
-      <li><a href="galeria.html" class="nav-link">Galería</a></li>
-      <li><a href="grid-implicito-explicito.html" class="nav-link">Grid Implícito/Explícito</a></li>
-      <li><a href="layout-revista.html" class="nav-link active">Layout Revista</a></li>
-      <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
-    </ul>
-  </nav>
-
-  <main class="content-container">
-    <section class="explanation">
-      <h2>Layout tipo Revista con CSS Grid</h2>
-      <p>Los diseños editoriales tipo revista son perfectos para mostrar el poder de CSS Grid. Este tipo de layouts se caracterizan por:</p>
-      <ul>
-        <li>Distribución asimétrica y dinámica del contenido</li>
-        <li>Jerarquía visual para destacar elementos importantes</li>
-        <li>Combinación de bloques de texto con imágenes de diferentes tamaños</li>
-        <li>Espaciado cuidadosamente planificado para mejorar la legibilidad</li>
+    <nav class="main-nav">
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Inicio</a></li>
+        <li><a href="holy-grail.html" class="nav-link">Holy Grail</a></li>
+        <li><a href="galeria.html" class="nav-link">Galería</a></li>
+        <li>
+          <a href="grid-implicito-explicito.html" class="nav-link"
+            >Grid Implícito/Explícito</a
+          >
+        </li>
+        <li>
+          <a href="layout-revista.html" class="nav-link active"
+            >Layout Revista</a
+          >
+        </li>
+        <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
       </ul>
-      <p>Con CSS Grid, podemos crear estos diseños complejos de forma sencilla, manteniendo el HTML limpio y semántico.</p>
-    </section>
+    </nav>
 
-    <section class="magazine-demo">
-      <h3>Demostración de Layout Revista</h3>
-      <p>A continuación se muestra un ejemplo de layout estilo revista. Observa cómo los diferentes elementos se organizan en la página de forma asimétrica pero equilibrada:</p>
-      
-      <div class="magazine-layout">
-        <!-- Cabecera de revista -->
-        <header class="magazine-header">
-          <div class="magazine-title">FemCoders Magazine</div>
-          <div class="magazine-edition">Edición especial: CSS Grid</div>
-        </header>
-        
-        <!-- Artículo principal -->
-        <article class="feature-article">
-          <h2>CSS Grid revoluciona el diseño web</h2>
-          <div class="article-meta">Por María Rodríguez • 15 Min</div>
-          <img src="./assests/articulo1.webp" alt="Imagen del artículo principal" class="feature-img">
-          <p class="article-intro">CSS Grid ha transformado la forma en que los desarrolladores web abordan la creación de layouts complejos, permitiendo diseños que antes eran imposibles o requerían numerosos hacks.</p>
-          <div class="article-content">
-            <p>Hasta la llegada de CSS Grid, los desarrolladores web dependían de técnicas como floats, posicionamiento absoluto o flexbox para crear layouts complejos. Sin embargo, estas soluciones nunca fueron realmente diseñadas para la creación de layouts bidimensionales completos.</p>
-            <p>Grid permite diseñar con precisión dónde se colocará cada elemento en una página, creando diseños más complejos y adaptables que nunca. Con propiedades como grid-template-areas, podemos literalmente "dibujar" cómo queremos que se vea nuestro layout.</p>
-          </div>
-        </article>
-        
-      
-        <article class="secondary-article">
-          <h3>5 razones para adoptar CSS Grid ahora mismo</h3>
-          <img src="./assests/css-grid-support.svg" alt="Imagen del artículo secundario">
-          <p>El soporte de navegadores para CSS Grid ya es excelente, lo que significa que puedes utilizarlo en proyectos reales sin preocuparte por la compatibilidad. Descubre por qué deberías comenzar a utilizarlo en todos tus proyectos.</p>
-          <a href="#" class="read-more">Leer más <i class="fas fa-arrow-right"></i></a>
-        </article>
-        
-        <!-- Sidebar con widgets -->
-        <aside class="sidebar">
-          <div class="widget popular-posts">
-            <h4>Lo más leído</h4>
-            <ul>
-              <li>
-                <span class="post-number">01</span>
-                <span class="post-title">Cómo combinar Flexbox y Grid para layouts perfectos</span>
-              </li>
-              <li>
-                <span class="post-number">02</span>
-                <span class="post-title">Guía avanzada de CSS Grid Template Areas</span>
-              </li>
-              <li>
-                <span class="post-number">03</span>
-                <span class="post-title">Diseño responsivo sin media queries con CSS Grid</span>
-              </li>
-            </ul>
-          </div>
-          
-          <div class="widget newsletter">
-            <h4>Suscríbete a nuestro newsletter</h4>
-            <p>Recibe los mejores artículos y tutoriales en tu correo.</p>
-            <form class="subscribe-form">
-              <input type="email" placeholder="Tu email" required>
-              <button type="submit">Suscribir</button>
-            </form>
-          </div>
-        </aside>
-        
-        <!-- Artículo corto -->
-        <article class="short-article">
-          <div class="short-content">
-            <h3>Entornos de desarrollo para CSS Grid</h3>
-            <p>Las herramientas de desarrollo modernas facilitan el trabajo con CSS Grid. Descubre qué navegadores ofrecen las mejores herramientas de inspección para depurar tus layouts.</p>
-            <a href="#" class="read-more">Ver herramientas <i class="fas fa-tools"></i></a>
-          </div>
-          <img src="./assests/css-grid-dev-tools.svg" alt="Imagen del artículo corto">
-        </article>
-        
-        <!-- Artículo destacado -->
-        <article class="highlight-article">
-          <div class="highlight-content">
-            <span class="highlight-tag">Destacado</span>
-            <h3>Workshop CSS Grid para principiantes</h3>
-            <p>Únete a nuestro workshop online gratuito y aprende los fundamentos de CSS Grid desde cero. Con ejercicios prácticos y feedback en tiempo real.</p>
-            <a href="https://www.femcodersclub.com/login" class="highlight-button">Inscríbete ahora</a>
-          </div>
-        </article>
-        
-        <!-- Pie de revista -->
-        <footer class="magazine-footer">
-          <div class="footer-section">
-            <h4>FemCoders Magazine</h4>
-            <p>© 2025 Todos los derechos reservados</p>
-          </div>
-          <div class="footer-nav">
-            <a href="#">Inicio</a>
-            <a href="#">Artículos</a>
-            <a href="#">Tutoriales</a>
-            <a href="#">Contacto</a>
-          </div>
-          <div class="social-section">
-            <a href="https://x.com/FemCodersClub"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.instagram.com/femcoders_club/"><i class="fab fa-instagram"></i></a>
-            <a href="https://github.com/femcodersclub"><i class="fab fa-github"></i></a>
-          </div>
-        </footer>
-      </div>
-    </section>
+    <main class="content-container">
+      <section class="explanation">
+        <h2>Layout tipo Revista con CSS Grid</h2>
+        <p>
+          Los diseños editoriales tipo revista son perfectos para mostrar el
+          poder de CSS Grid. Este tipo de layouts se caracterizan por:
+        </p>
+        <ul>
+          <li>Distribución asimétrica y dinámica del contenido</li>
+          <li>Jerarquía visual para destacar elementos importantes</li>
+          <li>
+            Combinación de bloques de texto con imágenes de diferentes tamaños
+          </li>
+          <li>
+            Espaciado cuidadosamente planificado para mejorar la legibilidad
+          </li>
+        </ul>
+        <p>
+          Con CSS Grid, podemos crear estos diseños complejos de forma sencilla,
+          manteniendo el HTML limpio y semántico.
+        </p>
+      </section>
 
-    <section class="code-explanation">
-      <h3>Cómo construir un layout tipo revista</h3>
-      
-      <div class="grid-areas-explanation">
-        <h4>Definición de áreas con grid-template-areas</h4>
-        <p>Para layouts complejos como este, grid-template-areas proporciona una forma visual e intuitiva de definir el diseño:</p>
-        <div class="code-example">
-          <pre><code>
+      <section class="magazine-demo">
+        <h3>Demostración de Layout Revista</h3>
+        <p>
+          A continuación se muestra un ejemplo de layout estilo revista. Observa
+          cómo los diferentes elementos se organizan en la página de forma
+          asimétrica pero equilibrada:
+        </p>
+
+        <div class="magazine-layout">
+          <header class="magazine-header">
+            <div class="magazine-title">FemCoders Club Magazine</div>
+            <div class="magazine-edition">Edición especial: CSS Grid</div>
+          </header>
+
+          <!-- Artículo principal -->
+          <article class="feature-article">
+            <h2>CSS Grid revoluciona el diseño web</h2>
+            <div class="article-meta">Por María Rodríguez • 15 Min</div>
+            <img
+              src="./assests/articulo1.webp"
+              alt="Imagen del artículo principal"
+              class="feature-img"
+            />
+            <p class="article-intro">
+              CSS Grid ha transformado la forma en que los desarrolladores web
+              abordan la creación de layouts complejos, permitiendo diseños que
+              antes eran imposibles o requerían numerosos hacks.
+            </p>
+            <div class="article-content">
+              <p>
+                Hasta la llegada de CSS Grid, los desarrolladores web dependían
+                de técnicas como floats, posicionamiento absoluto o flexbox para
+                crear layouts complejos. Sin embargo, estas soluciones nunca
+                fueron realmente diseñadas para la creación de layouts
+                bidimensionales completos.
+              </p>
+              <p>
+                Grid permite diseñar con precisión dónde se colocará cada
+                elemento en una página, creando diseños más complejos y
+                adaptables que nunca. Con propiedades como grid-template-areas,
+                podemos literalmente "dibujar" cómo queremos que se vea nuestro
+                layout.
+              </p>
+            </div>
+          </article>
+
+          <article class="secondary-article">
+            <h3>5 razones para adoptar CSS Grid ahora mismo</h3>
+            <img
+              src="./assests/css-grid-support.svg"
+              alt="Imagen del artículo secundario"
+            />
+            <p>
+              El soporte de navegadores para CSS Grid ya es excelente, lo que
+              significa que puedes utilizarlo en proyectos reales sin
+              preocuparte por la compatibilidad. Descubre por qué deberías
+              comenzar a utilizarlo en todos tus proyectos.
+            </p>
+            <a href="#" class="read-more"
+              >Leer más <i class="fas fa-arrow-right"></i
+            ></a>
+          </article>
+
+          <!-- Sidebar con widgets -->
+          <aside class="sidebar">
+            <div class="widget popular-posts">
+              <h4>Lo más leído</h4>
+              <ul>
+                <li>
+                  <span class="post-number">01</span>
+                  <span class="post-title"
+                    >Cómo combinar Flexbox y Grid para layouts perfectos</span
+                  >
+                </li>
+                <li>
+                  <span class="post-number">02</span>
+                  <span class="post-title"
+                    >Guía avanzada de CSS Grid Template Areas</span
+                  >
+                </li>
+                <li>
+                  <span class="post-number">03</span>
+                  <span class="post-title"
+                    >Diseño responsivo sin media queries con CSS Grid</span
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="widget newsletter">
+              <h4>Suscríbete a nuestro newsletter</h4>
+              <p>Recibe los mejores artículos y tutoriales en tu correo.</p>
+              <form class="subscribe-form">
+                <input type="email" placeholder="Tu email" required />
+                <button type="submit">Suscribir</button>
+              </form>
+            </div>
+          </aside>
+
+          <!-- Artículo corto -->
+          <article class="short-article">
+            <div class="short-content">
+              <h3>Entornos de desarrollo para CSS Grid</h3>
+              <p>
+                Las herramientas de desarrollo modernas facilitan el trabajo con
+                CSS Grid. Descubre qué navegadores ofrecen las mejores
+                herramientas de inspección para depurar tus layouts.
+              </p>
+              <a href="#" class="read-more"
+                >Ver herramientas <i class="fas fa-tools"></i
+              ></a>
+            </div>
+            <img
+              src="./assests/css-grid-dev-tools.svg"
+              alt="Imagen del artículo corto"
+            />
+          </article>
+
+          <!-- Artículo destacado -->
+          <article class="highlight-article">
+            <div class="highlight-content">
+              <span class="highlight-tag">Destacado</span>
+              <h3>Workshop CSS Grid para principiantes</h3>
+              <p>
+                Únete a nuestro workshop online gratuito y aprende los
+                fundamentos de CSS Grid desde cero. Con ejercicios prácticos y
+                feedback en tiempo real.
+              </p>
+              <a
+                href="https://www.femcodersclub.com/login"
+                class="highlight-button"
+                >Inscríbete ahora</a
+              >
+            </div>
+          </article>
+
+          <!-- Pie de revista -->
+          <footer class="magazine-footer">
+            <div class="footer-section">
+              <h4>FemCoders Magazine</h4>
+              <p>© 2025 Todos los derechos reservados</p>
+            </div>
+            <div class="footer-nav">
+              <a href="#">Inicio</a>
+              <a href="#">Artículos</a>
+              <a href="#">Tutoriales</a>
+              <a href="#">Contacto</a>
+            </div>
+            <div class="social-section">
+              <a href="https://x.com/FemCodersClub"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="https://www.instagram.com/femcoders_club/"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="https://github.com/femcodersclub"
+                ><i class="fab fa-github"></i
+              ></a>
+            </div>
+          </footer>
+        </div>
+      </section>
+
+      <section class="code-explanation">
+        <h3>Cómo construir un layout tipo revista</h3>
+
+        <div class="grid-areas-explanation">
+          <h4>Definición de áreas con grid-template-areas</h4>
+          <p>
+            Para layouts complejos como este, grid-template-areas proporciona
+            una forma visual e intuitiva de definir el diseño:
+          </p>
+          <div class="code-example">
+            <pre><code>
 .magazine-layout {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -169,14 +254,17 @@
 .highlight-article { grid-area: highlight; }
 .magazine-footer { grid-area: footer; }
           </code></pre>
+          </div>
         </div>
-      </div>
-      
-      <div class="responsive-techniques">
-        <h4>Adaptación para dispositivos móviles</h4>
-        <p>En pantallas más pequeñas, reorganizamos las áreas para una mejor experiencia de lectura:</p>
-        <div class="code-example">
-          <pre><code>
+
+        <div class="responsive-techniques">
+          <h4>Adaptación para dispositivos móviles</h4>
+          <p>
+            En pantallas más pequeñas, reorganizamos las áreas para una mejor
+            experiencia de lectura:
+          </p>
+          <div class="code-example">
+            <pre><code>
 @media (max-width: 768px) {
   .magazine-layout {
     grid-template-columns: 1fr;
@@ -191,78 +279,95 @@
   }
 }
           </code></pre>
-        </div>
-      </div>
-    </section>
-
-    <section class="layout-patterns">
-      <h3>Patrones de diseño editorial comunes</h3>
-      
-      <div class="patterns-grid">
-        <div class="pattern-card">
-          <h4>Layout de titular destacado</h4>
-          <div class="pattern-preview headline-layout">
-            <div class="headline"></div>
-            <div class="content"></div>
-            <div class="image"></div>
-            <div class="sidebar-small"></div>
           </div>
-          <p>Ideal para destacar una noticia importante con un titular de gran tamaño.</p>
         </div>
-        
-        <div class="pattern-card">
-          <h4>Layout de artículos múltiples</h4>
-          <div class="pattern-preview multi-article-layout">
-            <div class="article1"></div>
-            <div class="article2"></div>
-            <div class="article3"></div>
-            <div class="article4"></div>
-            <div class="article5"></div>
-          </div>
-          <p>Perfecto para secciones de blog o revistas con varios artículos de relevancia similar.</p>
-        </div>
-        
-        <div class="pattern-card">
-          <h4>Layout mixto</h4>
-          <div class="pattern-preview mixed-layout">
-            <div class="featured"></div>
-            <div class="list"></div>
-            <div class="ad"></div>
-            <div class="gallery"></div>
-          </div>
-          <p>Combina un artículo destacado, lista de enlaces, publicidad y una pequeña galería.</p>
-        </div>
-        
-        <div class="pattern-card">
-          <h4>Layout de portada</h4>
-          <div class="pattern-preview cover-layout">
-            <div class="main-title"></div>
-            <div class="cover-image"></div>
-            <div class="toc"></div>
-            <div class="highlights"></div>
-          </div>
-          <p>Emula el estilo de portada de revistas tradicionales.</p>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="challenge-section">
-      <h3>Desafío</h3>
-      <p>¿Te animas a crear tu propio layout tipo revista? Intenta:</p>
-      <ul>
-        <li>Diseñar una portada de revista sobre un tema que te apasione</li>
-        <li>Crear un layout de blog con artículos destacados y widgets laterales</li>
-        <li>Implementar un diseño de newsletter con múltiples secciones</li>
-        <li>Experimentar con diferentes grid-template-areas para varias resoluciones</li>
-      </ul>
-      <p>Recuerda que los mejores diseños editoriales encuentran un equilibrio entre la innovación visual y la legibilidad.</p>
-    </section>
-  </main>
+      <section class="layout-patterns">
+        <h3>Patrones de diseño editorial comunes</h3>
 
-  <footer class="main-footer">
-    <p>&copy; 2025 FemCoders Club. Creado con 💜 y CSS Grid.</p>
-  </footer>
+        <div class="patterns-grid">
+          <div class="pattern-card">
+            <h4>Layout de titular destacado</h4>
+            <div class="pattern-preview headline-layout">
+              <div class="headline"></div>
+              <div class="content"></div>
+              <div class="image"></div>
+              <div class="sidebar-small"></div>
+            </div>
+            <p>
+              Ideal para destacar una noticia importante con un titular de gran
+              tamaño.
+            </p>
+          </div>
 
-  <script src="js/main.js"></script>
-</body>
+          <div class="pattern-card">
+            <h4>Layout de artículos múltiples</h4>
+            <div class="pattern-preview multi-article-layout">
+              <div class="article1"></div>
+              <div class="article2"></div>
+              <div class="article3"></div>
+              <div class="article4"></div>
+              <div class="article5"></div>
+            </div>
+            <p>
+              Perfecto para secciones de blog o revistas con varios artículos de
+              relevancia similar.
+            </p>
+          </div>
+
+          <div class="pattern-card">
+            <h4>Layout mixto</h4>
+            <div class="pattern-preview mixed-layout">
+              <div class="featured"></div>
+              <div class="list"></div>
+              <div class="ad"></div>
+              <div class="gallery"></div>
+            </div>
+            <p>
+              Combina un artículo destacado, lista de enlaces, publicidad y una
+              pequeña galería.
+            </p>
+          </div>
+
+          <div class="pattern-card">
+            <h4>Layout de portada</h4>
+            <div class="pattern-preview cover-layout">
+              <div class="main-title"></div>
+              <div class="cover-image"></div>
+              <div class="toc"></div>
+              <div class="highlights"></div>
+            </div>
+            <p>Emula el estilo de portada de revistas tradicionales.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="challenge-section">
+        <h3>Desafío</h3>
+        <p>¿Te animas a crear tu propio layout tipo revista? Intenta:</p>
+        <ul>
+          <li>Diseñar una portada de revista sobre un tema que te apasione</li>
+          <li>
+            Crear un layout de blog con artículos destacados y widgets laterales
+          </li>
+          <li>Implementar un diseño de newsletter con múltiples secciones</li>
+          <li>
+            Experimentar con diferentes grid-template-areas para varias
+            resoluciones
+          </li>
+        </ul>
+        <p>
+          Recuerda que los mejores diseños editoriales encuentran un equilibrio
+          entre la innovación visual y la legibilidad.
+        </p>
+      </section>
+    </main>
+
+    <footer class="main-footer">
+      <p>&copy; 2025 FemCoders Club. Creado con 💜 y CSS Grid.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
 </html>
